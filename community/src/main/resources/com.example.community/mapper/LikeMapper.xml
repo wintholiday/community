@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.community.mapper.LikeMapper">
+    <insert id="likeArticle" parameterType="int">
+        INSERT INTO likes (article_id) VALUES (#{articleId})
+    </insert>
+
+    <delete id="cancelLike" parameterType="int">
+        DELETE FROM likes WHERE article_id = #{articleId}
+    </delete>
+
+    <select id="countLikeByUserAndArticle" resultType="int" parameterType="int">
+        SELECT COUNT(*) FROM likes WHERE article_id = #{articleId}
+    </select>
+    <select id="countLikeByArticle" resultType="int" parameterType="int">
+        SELECT COUNT(*) FROM likes WHERE article_id = #{articleId}
+    </select>
+
+    <select id="getLikedArticleIdsByUserId" parameterType="int" resultType="java.lang.Integer">
+        SELECT articleId FROM like WHERE userId = #{userId}
+    </select>
+</mapper>

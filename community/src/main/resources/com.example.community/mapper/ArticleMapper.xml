@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.community.mapper.ArticleMapper">
+
+    <!-- 查询所有文章，按点击量或时间降序，每次查询十条 -->
+    <select id="selectArticles" resultType="com.example.community.pojo.Article">
+        SELECT * FROM Article
+        <where>
+            <if test="orderBy != null and orderBy == 'clickCount'">
+                ORDER BY clickCount DESC
+            </if>
+            <if test="orderBy != null and orderBy == 'date'">
+                ORDER BY date DESC
+            </if>
+        </where>
+        LIMIT #{offset}, 10
+    </select>
+
+    <!-- 获取文章的点击量 -->
+    <select id="getClickCount" parameterType="int" resultType="int">
+        SELECT clickCount
+        FROM Article
+        WHERE articleId = #{articleId}
+    </select>
+
+    <!-- 根据用户ID查询用户喜欢的文章 -->
+    <select id="selectLikedArticlesByUserId" resultType="com.example.community.pojo.Article">
+        SELECT * FROM Article
+        WHERE userId = #{userId}
+    </select>
+
+    <!-- 增加文章点击量 -->
+    <update id="increaseClickCount" parameterType="int">
+        UPDATE Article
+        SET clickCount = clickCount + 1
+        WHERE articleId = #{articleId}
+    </update>
+
+    <select id="getArticleById" parameterType="int" resultType="com.example.community.pojo.Article">
+        SELECT * FROM article WHERE articleId = #{articleId}
+    </select>
+
+    <select id="findArticleOrderByDate" resultType="com.example.community.pojo.Article">
+        SELECT * FROM article ORDER BY publish_date DESC
+    </select>
+
+    <select id="findArticleOrderByClickCount" resultType="com.example.community.pojo.Article">
+        SELECT * FROM article ORDER BY click_count DESC
+    </select>
+
+
+</mapper>
