@@ -67,125 +67,71 @@
 
 5. 访问`http://localhost:8080`查看项目首页
 
-├── pom.xml
-├── src
-│   ├── main
-│   │   ├── java
-│   │   │   └── com
-│   │   │       └── example
-│   │   │           └── community
-│   │   │               ├── CommunityApplication.java
-│   │   │               ├── config
-│   │   │               │   └── WebConfig.java
-│   │   │               ├── controller
-│   │   │               │   ├── ArticleController.java
-│   │   │               │   ├── AvatarController.java
-│   │   │               │   ├── CommentController.java
-│   │   │               │   ├── FavoriteController.java
-│   │   │               │   ├── GlobalExceptionHandler.java
-│   │   │               │   ├── HomePage.java
-│   │   │               │   ├── LikesController.java
-│   │   │               │   ├── LoginController.java
-│   │   │               │   └── UsersController.java
-│   │   │               ├── filter
-│   │   │               │   └── LoginCheckFilter.java
-│   │   │               ├── interceptor
-│   │   │               │   └── LoginCheckInterceptor.java
-│   │   │               ├── mapper
-│   │   │               │   ├── ArticleMapper.java
-│   │   │               │   ├── CommentMapper.java
-│   │   │               │   ├── FavoriteMapper.java
-│   │   │               │   ├── LikeMapper.java
-│   │   │               │   └── UserMapper.java
-│   │   │               ├── pojo
-│   │   │               │   ├── Article.java
-│   │   │               │   ├── Comment.java
-│   │   │               │   ├── LoginRequest.java
-│   │   │               │   ├── Result.java
-│   │   │               │   └── User.java
-│   │   │               ├── service
-│   │   │               │   ├── ArticleService.java
-│   │   │               │   ├── CommentService.java
-│   │   │               │   ├── FavoriteService.java
-│   │   │               │   ├── LikesService.java
-│   │   │               │   └── UsersService.java
-│   │   │               └── utils
-│   │   │                   ├── AliOSSProperties.java
-│   │   │                   ├── AliOSSUtils.java
-│   │   │                   ├── JwtUtils.java
-│   │   │                   └── SnowflakeIdGenerator.java
-│   │   └── resources
-│   │       ├── application.properties
-│   │       ├── com
-│   │       │   └── example
-│   │       │       └── community
-│   │       │           └── mapper
-│   │       │               ├── ArticleMapper.xml
-│   │       │               ├── LikeMapper.xml
-│   │       │               └── UserMapper.xml
-│   │       ├── sql.md
-│   │       ├── static
-│   │       └── templates
-│   └── test
-│       └── java
-│           └── com
-│               └── example
-│                   └── community
-│                       └── CommunityApplicationTests.java
-└── target
-    ├── classes
-    │   ├── META-INF
-    │   │   └── spring-configuration-metadata.json
-    │   ├── application.properties
-    │   ├── com
-    │   │   └── example
-    │   │       └── community
-    │   │           ├── CommunityApplication.class
-    │   │           ├── config
-    │   │           │   └── WebConfig.class
-    │   │           ├── controller
-    │   │           │   ├── ArticleController.class
-    │   │           │   ├── AvatarController.class
-    │   │           │   ├── CommentController.class
-    │   │           │   ├── FavoriteController.class
-    │   │           │   ├── GlobalExceptionHandler.class
-    │   │           │   ├── HomePage.class
-    │   │           │   ├── LikesController.class
-    │   │           │   ├── LoginController.class
-    │   │           │   └── UsersController.class
-    │   │           ├── filter
-    │   │           │   └── LoginCheckFilter.class
-    │   │           ├── interceptor
-    │   │           │   └── LoginCheckInterceptor.class
-    │   │           ├── mapper
-    │   │           │   ├── ArticleMapper.class
-    │   │           │   ├── ArticleMapper.xml
-    │   │           │   ├── CommentMapper.class
-    │   │           │   ├── FavoriteMapper.class
-    │   │           │   ├── LikeMapper.class
-    │   │           │   ├── LikeMapper.xml
-    │   │           │   ├── UserMapper.class
-    │   │           │   └── UserMapper.xml
-    │   │           ├── pojo
-    │   │           │   ├── Article.class
-    │   │           │   ├── Comment.class
-    │   │           │   ├── LoginRequest.class
-    │   │           │   ├── Result.class
-    │   │           │   └── User.class
-    │   │           ├── service
-    │   │           │   ├── ArticleService.class
-    │   │           │   ├── CommentService.class
-    │   │           │   ├── FavoriteService.class
-    │   │           │   ├── LikesService.class
-    │   │           │   └── UsersService.class
-    │   │           └── utils
-    │   │               ├── AliOSSProperties.class
-    │   │               ├── AliOSSUtils.class
-    │   │               ├── JwtUtils.class
-    │   │               └── SnowflakeIdGenerator.class
-    │   └── sql.md
-    └── generated-sources
-        └── annotations
+- pom.xml
+- src
+  - main
+    - java
+      - com
+        - example
+          - community
+            - CommunityApplication.java
+            - config
+              - WebConfig.java
+            - controller
+              - ArticleController.java
+              - AvatarController.java
+              - CommentController.java
+              - FavoriteController.java
+              - GlobalExceptionHandler.java
+              - HomePage.java
+              - LikesController.java
+              - LoginController.java
+              - UsersController.java
+            - filter
+              - LoginCheckFilter.java
+            - interceptor
+              - LoginCheckInterceptor.java
+            - mapper
+              - ArticleMapper.java
+              - CommentMapper.java
+              - FavoriteMapper.java
+              - LikeMapper.java
+              - UserMapper.java
+            - pojo
+              - Article.java
+              - Comment.java
+              - LoginRequest.java
+              - Result.java
+              - User.java
+            - service
+              - ArticleService.java
+              - CommentService.java
+              - FavoriteService.java
+              - LikesService.java
+              - UsersService.java
+            - utils
+              - AliOSSProperties.java
+              - AliOSSUtils.java
+              - JwtUtils.java
+              - SnowflakeIdGenerator.java
+    - resources
+      - application.properties
+      - com
+        - example
+          - community
+            - mapper
+              - ArticleMapper.xml
+              - LikeMapper.xml
+              - UserMapper.xml
+      - sql.md
+      - static
+      - templates
+  - test
+    - java
+      - com
+        - example
+          - community
+            - CommunityApplicationTests.java
 
 
 
