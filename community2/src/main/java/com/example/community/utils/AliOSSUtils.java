@@ -33,11 +33,7 @@ public class AliOSSUtils {
      */
     public String upload(MultipartFile file) throws IOException {
         //获取阿里云OSS参数
-        String endpoint = "https://oss-cn-hangzhou.aliyuncs.com";
-        String accessKeyId = "LTAI5tQdHmgsF7Ld5EwJybP5";
-        String accessKeySecret = "KbZUeAOVGWUEt9zwWuESTdQ4Fx1sZQ";
-        String bucketName = "test-webtlias";
-
+       
         // 获取上传的文件的输入流
         InputStream inputStream = file.getInputStream();
 
