@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.community.mapper.LikeMapper">
+    <!-- 点赞文章 -->
+    <insert id="likeArticle" parameterType="int">
+        INSERT INTO likes (articleId,userId) VALUES (#{articleId},#{userId})
+    </insert>
+    <!-- 更新文章的likeCount -->
+    <update id="updateLikeCount" parameterType="int">
+        UPDATE Article SET likeCount = likeCount + 1 WHERE articleId = #{articleId}
+    </update>
+
+    <delete id="cancelLike" parameterType="int">
+        DELETE FROM likes WHERE articleId = #{articleId}
+    </delete>
+
+    <select id="countLikeByUserAndArticle" resultType="int" parameterType="int">
+        SELECT COUNT(*) FROM likes WHERE articleId = #{articleId}
+    </select>
+    <select id="countLikeByArticle" resultType="int" parameterType="int">
+        SELECT COUNT(*) FROM likes WHERE articleId = #{articleId}
+    </select>
+
+    <!--<select id="getLikedArticleIdsByUserId" parameterType="Integer" resultType="java.lang.Integer">
+        SELECT articleId FROM likes WHERE userId = #{userId}
+    </select>-->
+    <select id="getLikedArticleIdsByUserId" parameterType="Integer" resultType="java.lang.Integer">
+        SELECT articleId FROM likes WHERE userId = #{userId}
+    </select>
+
+</mapper>
